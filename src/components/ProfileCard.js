@@ -21,7 +21,7 @@ const ProfileCard = () => {
         </div>
         <div style={styles.profileDetails}>
           <h3 style={styles.profileName}>Aadish Samir</h3>
-          <p style={styles.profileRole}>Software Engineer</p>
+          <p style={styles.profileRole}>Hobbyist Coder</p>
         </div>
       </div>
 
@@ -41,7 +41,7 @@ const ProfileCard = () => {
                   style={styles.modalImage}
                 />
                 <h3>Aadish Samir</h3>
-                <p>Software Engineer</p>
+                <p>Hobbyist Coder</p>
               </div>
               <div style={styles.modalRight}>
                 <p>
