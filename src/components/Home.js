@@ -1,10 +1,12 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Line } from "react-chartjs-2"; // Import the Line chart from react-chartjs-2
-import { Chart as ChartJS } from "chart.js/auto"; // Auto-import Chart.js components
 import { useSpring, animated } from "@react-spring/web";
 import "@material/web/button/filled-button.js";
 import "@material/web/progress/circular-progress.js";
+
+// eslint-disable-next-line no-unused-vars
+import { Chart as ChartJS } from "chart.js/auto"; // Auto-import Chart.js components
 
 const Home = () => {
   const navigate = useNavigate();
