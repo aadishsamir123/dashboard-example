@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { Line } from "react-chartjs-2"; // Import the Line chart from react-chartjs-2
 import { Chart as ChartJS } from "chart.js/auto"; // Auto-import Chart.js components
 import { useSpring, animated } from "@react-spring/web";
@@ -6,12 +7,15 @@ import "@material/web/button/filled-button.js";
 import "@material/web/progress/circular-progress.js";
 
 const Home = () => {
+  const navigate = useNavigate();
+
   // Define individual animations for each card
   const taskAnimation = useSpring({
     opacity: 1,
     transform: "translateY(0px)",
     from: { opacity: 0, transform: "translateY(20px)" },
     config: { tension: 180, friction: 12 },
+    delay: 500,
   });
 
   const progressAnimation = useSpring({
@@ -19,7 +23,7 @@ const Home = () => {
     transform: "translateY(0px)",
     from: { opacity: 0, transform: "translateY(20px)" },
     config: { tension: 180, friction: 12 },
-    delay: 200,
+    delay: 700,
   });
 
   const messagesAnimation = useSpring({
@@ -27,7 +31,7 @@ const Home = () => {
     transform: "translateY(0px)",
     from: { opacity: 0, transform: "translateY(20px)" },
     config: { tension: 180, friction: 12 },
-    delay: 400,
+    delay: 900,
   });
 
   const chartData = {
@@ -66,7 +70,7 @@ const Home = () => {
             Tasks
           </h3>
           <p>You have 5 pending tasks.</p>
-          <md-filled-button onClick={() => (window.location.href = "/tasks")}>
+          <md-filled-button onClick={() => navigate("/tasks")}>
             View Tasks
           </md-filled-button>
         </animated.div>
@@ -95,9 +99,7 @@ const Home = () => {
           </div>
 
           {/* Button below the graph */}
-          <md-filled-button
-            onClick={() => (window.location.href = "/progress")}
-          >
+          <md-filled-button onClick={() => navigate("/progress")}>
             View Progress Report
           </md-filled-button>
         </animated.div>
@@ -117,9 +119,7 @@ const Home = () => {
             Messages
           </h3>
           <p>You have 3 new messages.</p>
-          <md-filled-button
-            onClick={() => (window.location.href = "/messages")}
-          >
+          <md-filled-button onClick={() => navigate("/messages")}>
             Check Messages
           </md-filled-button>
         </animated.div>
